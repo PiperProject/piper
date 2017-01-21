@@ -3,7 +3,7 @@ __pycache__/
 *.py[cod]
 *$py.class
 
-examples/mongo-ex/data/*
+examples/mongodb-ex/data/*
 
 # C extensions
 *.so
