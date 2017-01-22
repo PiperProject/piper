@@ -6,7 +6,8 @@ Installing the base piper index and management software is as easy as cloning th
 <br>
 ```git clone https://github.com/PiperProject/piper.git```
 
-However, installing piper does not include any default packages from the index. Users pull specific packages from the index explicitly. For example, suppose a user intends to augment the capabilities of an underlying NoSQL system with the basic set of aggregate operations rendered canonical by RDBMSs in the 1990s and early 2000s. The aggsPack package in the index supports all five canonical aggregates (COUNT, SUM, AVERAGE, MIN, MAX). To pull the package, run the following command from the top of the piper/ directory:
+## Installing piper packages
+Installing piper does not trigger the installation of any packages from the index. Users pull specific packages from the index explicitly. For example, suppose a user intends to augment the capabilities of an underlying NoSQL system with the basic set of aggregate operations rendered canonical by RDBMSs in the 1990s and early 2000s. The aggsPack package in the index supports all five canonical aggregates (COUNT, SUM, AVERAGE, MIN, MAX). To pull the package, run the following command from the top of the piper/ directory:
 <br>
 ```python ./src/drivers/piper.py install aggsPack```
 
