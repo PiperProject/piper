@@ -3,27 +3,31 @@ A package index and management system for database management tools organized on
 
 ## Installing piper
 Installing the base piper index and management software is as easy as cloning the repository:
-<br>
-```git clone https://github.com/PiperProject/piper.git```
+```
+git clone https://github.com/PiperProject/piper.git
+```
 
 ## Installing piper packages
 Installing piper does not trigger the installation of any packages from the index. Users pull specific packages from the index explicitly. For example, suppose a user intends to augment the capabilities of an underlying NoSQL system with the basic set of aggregate operations rendered canonical by RDBMSs in the 1990s and early 2000s. The aggsPack package in the index supports all five canonical aggregates (COUNT, SUM, AVERAGE, MIN, MAX). To pull the package, run the following command from the top of the piper/ directory:
-<br>
-```python ./src/drivers/piper.py install aggsPack```
+```
+python ./src/drivers/piper.py install aggsPack
+```
 
 piper also supports explicit package updates with the command:
-<br>
-```python ./src/drivers/piper.py update```
+```
+python ./src/drivers/piper.py update
+```
 
 Finally, piper supports the easy deinstallation of packages loaded from the index:
-<br>
-```python ./src/drivers/piper.py uninstall aggsPack```
+```
+python ./src/drivers/piper.py uninstall aggsPack
+```
 
 ## Dependencies
 
 ### Python
 * [pymongo](https://api.mongodb.com/python/2.7.2/installation.html)
-* [pickledb](https://api.mongodb.com/python/2.7.2/installation.html://pypi.python.org/pypi/pickleDB)
+* [pickledb](https://pypi.python.org/pypi/pickleDB)
 
 ### Other
 * [MongoDB](https://docs.mongodb.com/manual/installation/)
