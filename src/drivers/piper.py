@@ -19,8 +19,6 @@ URL_SIMPLEJOIN = "https://github.com/PiperProject/simpleJoin.git"
 def main() :
   packageList = sys.argv[2:]
 
-  os.system( "python " + CURR_PATH + "/setup.py" )
-
   if sys.argv[1] == "install" :
 
     for p in packageList :
