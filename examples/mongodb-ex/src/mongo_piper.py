@@ -4,16 +4,13 @@
 import os, pprint, sys, time
 from pymongo import MongoClient
 
-# import sibling packages HERE!!!
-packagePath  = os.path.abspath( __file__ + "/../../../../src" )
-sys.path.append( packagePath )
-
-from adapters import piper_mongodb
-
 AGGSPACK_PATH = os.path.abspath( __file__ + "/../../../../src/packages/aggsPack/packages" )
 sys.path.append( AGGSPACK_PATH )
-
 import count, sum_agg, average, min_agg, max_agg
+
+SIMPLEJOIN_PATH = os.path.abspath( __file__ + "/../../../../src/packages/simpleJoin/src" )
+sys.path.append( SIMPLEJOIN_PATH )
+import simpleJoin
 
 # -------------------------------------- #
 
@@ -82,13 +79,15 @@ def main() :
   client = MongoClient()
   db = client.bookdb
 
-  book1 = { "author" : "Katy Dee", "title" : "A History of Elsanna", "pubYear" : 2018, "numCopies" : 0, "categories" : ["fantasy"], "cost(Dollars)" : 0 }
-  book2 = { "author" : "Katy Dee", "title" : "The LMR Guide to Frozen Fanfiction", "pubYear" : 2017, "numCopies" : 0, "categories" : ["fantasy"], "cost(Dollars)" : 0 }
+  book1 = { "author" : "Katy Dee", "title" : "A History of Elsanna", "pubYear" : 2018, "numCopies" : 0, "categories" : ["fantasy"], "cost(Dollars)" : 10 }
+  book2 = { "author" : "Katy Dee", "title" : "The LMR Guide to Frozen Fanfiction", "pubYear" : 2017, "numCopies" : 0, "categories" : ["fantasy"], "cost(Dollars)" : 9.99 }
+  book3 = { "author" : "Kat Green", "title" : "The LMR Guide to Frozen Fanfiction", "pubYear" : 2017, "numCopies" : 0, "categories" : ["fantasy", "scifi"], "cost(Dollars)" : 0 }
 
   # insert data
   b    = db.bookdb
   bid1 = b.insert_one( book1 ).inserted_id
   bid2 = b.insert_one( book2 ).inserted_id
+  bid3 = b.insert_one( book3 ).inserted_id
 
   # check mongo collections
   if DEBUG :
@@ -113,6 +112,11 @@ def main() :
   print average.average( [ bid1, bid2 ], b, "pubYear,>,2000" )
   print min_agg.min_agg( [ bid1, bid2 ], b, "pubYear,>,2000" )
   print max_agg.max_agg( [ bid1, bid2 ], b, "pubYear,>,2000" )
+
+  # join
+  res = simpleJoin.simpleJoin( b, [[bid1, bid2, bid3]], "pubYear", None )
+  for i in res :
+    print i
 
   # ---------------------------------------------------- #
   # drop collections

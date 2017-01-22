@@ -4,8 +4,14 @@ import os, sys
 
 PACKAGE_PATH   = os.path.abspath( __file__ + "/../../packages" )
 CURR_PATH      = os.path.abspath( __file__ + "/.." )
+
+# ------------------------------------------------------------------- #
+#                      SUPPORTED PACKAGES                             #
+
 URL_AGGSPACK   = "https://github.com/PiperProject/aggsPack.git"
-URL_SIMPLEJOIN = ""
+URL_SIMPLEJOIN = "https://github.com/PiperProject/simpleJoin.git"
+
+# ------------------------------------------------------------------- #
 
 ##########
 #  MAIN  #
@@ -37,6 +43,9 @@ def main() :
         os.system( "cd " + PACKAGE_PATH + "; git rm --cached -f ./" + p + " ; rm -rf " + p + ";" )
       else :
         print "Package not recognized : " + p
+
+  elif sys.argv[1] == "update" :
+    os.system( "python " + CURR_PATH + "/setup.py" )
 
 
 ##############################

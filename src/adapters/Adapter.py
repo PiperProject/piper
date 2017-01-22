@@ -8,7 +8,8 @@ from pymongo import *
 # adapter path
 adaptersPath  = os.path.abspath( __file__ + "/.." )
 sys.path.append( adaptersPath )
-from adapters import piper_mongodb
+#from adapters import piper_mongodb
+import piper_mongodb
 
 # settings dir
 settingsPath  = os.path.abspath( __file__ + "/../../core" )

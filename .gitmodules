@@ -4,3 +4,6 @@
 [submodule "src/packages/aggsPack"]
 	path = src/packages/aggsPack
 	url = https://github.com/PiperProject/aggsPack.git
+[submodule "src/packages/simpleJoin"]
+	path = src/packages/simpleJoin
+	url = https://github.com/PiperProject/simpleJoin.git
