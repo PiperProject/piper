@@ -13,7 +13,7 @@ from adapters import piper_mongodb
 AGGSPACK_PATH = os.path.abspath( __file__ + "/../../../../src/packages/aggsPack/packages" )
 sys.path.append( AGGSPACK_PATH )
 
-import count
+import count, sum_agg, average, min_agg, max_agg
 
 # -------------------------------------- #
 
@@ -82,7 +82,7 @@ def main() :
   client = MongoClient()
   db = client.bookdb
 
-  book1 = { "author" : "Katy Dee", "title" : "A History of Elsanna", "pubYear" : 2017, "numCopies" : 0, "categories" : ["fantasy"], "cost(Dollars)" : 0 }
+  book1 = { "author" : "Katy Dee", "title" : "A History of Elsanna", "pubYear" : 2018, "numCopies" : 0, "categories" : ["fantasy"], "cost(Dollars)" : 0 }
   book2 = { "author" : "Katy Dee", "title" : "The LMR Guide to Frozen Fanfiction", "pubYear" : 2017, "numCopies" : 0, "categories" : ["fantasy"], "cost(Dollars)" : 0 }
 
   # insert data
@@ -108,7 +108,11 @@ def main() :
   print
 
   # agg ops
-  print count.count( [ bid1, bid2 ], b, None )
+  print count.count( [ bid1, bid2 ], b, "pubYear,>,2000" )
+  print sum_agg.sum_agg( [ bid1, bid2 ], b, "pubYear,>,2000" )
+  print average.average( [ bid1, bid2 ], b, "pubYear,>,2000" )
+  print min_agg.min_agg( [ bid1, bid2 ], b, "pubYear,>,2000" )
+  print max_agg.max_agg( [ bid1, bid2 ], b, "pubYear,>,2000" )
 
   # ---------------------------------------------------- #
   # drop collections

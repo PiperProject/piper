@@ -5,6 +5,7 @@ __pycache__/
 
 examples/mongodb-ex/dbtmp/*
 src/packages/*
+examples/mongodb-ex/src/dbid.txt
 
 # C extensions
 *.so
