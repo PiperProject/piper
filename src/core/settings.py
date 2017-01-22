@@ -5,5 +5,5 @@
 #               GLOBALS                  #
 # -------------------------------------- #
 
-NOSQL_TYPE = "mongodb"
-DEBUG = True
+DEBUG   = False
+OUTPUTS = True

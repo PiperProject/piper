@@ -23,11 +23,25 @@ Finally, piper supports the easy deinstallation of packages loaded from the inde
 python ./src/drivers/piper.py uninstall aggsPack
 ```
 
+## Examples
+The current prototype ships with two examples illustrating the use of piper within the contexts of two different classes of NoSQL database systems. One example illustrates the use of piper to augment a MongoDB document store with both the basic aggregates and a simple join. Similarly, the other example uses piper to extend the capabilities of a PickleDB key-value store with the basic aggregates and simple join currently available in the package index.
+
+After installing aggsPack and simpleJoin, the following command runs the MongoDB document store example from the top directory: 
+```
+python examples/mongodb-ex/src/mongo_piper.py
+``` 
+The output details the contents of the database and the results of applying all the basic aggregates and the simple join on the contents.
+
+The following command performs a similar action for a PickleDB key-value store:
+```
+python examples/pickledb-ex/src/pickle_piper.py 
+``` 
+
 ## Dependencies
 
 ### Python
 * [pymongo](https://api.mongodb.com/python/2.7.2/installation.html)
-* [pickledb](https://pypi.python.org/pypi/pickleDB)
+* [pickledb](https://pythonhosted.org/pickleDB/)
 
 ### Other
 * [MongoDB](https://docs.mongodb.com/manual/installation/)

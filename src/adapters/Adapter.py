@@ -9,7 +9,7 @@ from pymongo import *
 adaptersPath  = os.path.abspath( __file__ + "/.." )
 sys.path.append( adaptersPath )
 #from adapters import piper_mongodb
-import piper_mongodb
+import piper_mongodb, piper_pickledb
 
 # settings dir
 settingsPath  = os.path.abspath( __file__ + "/../../core" )
@@ -35,5 +35,5 @@ class Adapter() :
   def get( self, i, c ) :
     if self.nosql_type == "mongodb" :
       return piper_mongodb.get( i, c )
-    #elif self.nosql_type == "pickledb" :
-    #  return piper_pickledb.get( i, c )
+    elif self.nosql_type == "pickledb" :
+      return piper_pickledb.get( i, c )
