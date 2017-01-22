@@ -1,0 +1,6 @@
+[submodule "aggsPack"]
+	path = aggsPack
+	url = https://github.com/PiperProject/aggsPack.git
+[submodule "src/packages/aggsPack"]
+	path = src/packages/aggsPack
+	url = https://github.com/PiperProject/aggsPack.git

@@ -3,7 +3,8 @@ __pycache__/
 *.py[cod]
 *$py.class
 
-examples/mongodb-ex/data/*
+examples/mongodb-ex/dbtmp/*
+src/packages/*
 
 # C extensions
 *.so
