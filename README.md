@@ -2,7 +2,7 @@
 A package index and management system for database management tools organized on Github under the organization of the Piper Project. The base "piper" package encompasses the basic manaagement code necessary for integrating packages from the Piper Project over your underlying NoSQL system. NoSQL databases currently supported by the index include: MongoDB and PickleDB. With piper, users can pull all and only the database management tools from the package index maintained under the Piper Project relevant to their needs.
 
 ## Installing piper
-Installing the base piper index and management software is as easy as cloning the repository:
+Installing the base piper index and management software is as easy as running the setup file:
 ```
 python setup.py
 ```
