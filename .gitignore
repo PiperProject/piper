@@ -7,6 +7,8 @@ examples/mongodb-ex/dbtmp/*
 src/packages/*
 examples/mongodb-ex/src/dbid.txt
 
+*.swp
+
 # C extensions
 *.so
 
