@@ -98,9 +98,9 @@ def main() :
   client = MongoClient()
   db = client.bookdb
 
-  book1 = { "author" : "Elsa Menzel", "title" : "A Martial Arts Primer", "pubYear" : 2018, "numCopies" : 0, "categories" : ["fantasy"], "cost(Dollars)" : 10 }
-  book2 = { "author" : "Anna Summers", "title" : "The Rising", "pubYear" : 2017, "numCopies" : 0, "categories" : ["fantasy"], "cost(Dollars)" : 9.99 }
-  book3 = { "author" : "Kat Green", "title" : "Frozen Space", "pubYear" : 2017, "numCopies" : 0, "categories" : ["fantasy", "scifi"], "cost(Dollars)" : 0 }
+  book1 = { "author" : "Elsa Menzel",  "title" : "A Martial Arts Primer", "pubYear" : 2018, "numCopies" : 0, "categories" : ["fantasy"],          "cost(Dollars)" : 10 }
+  book2 = { "author" : "Anna Summers", "title" : "The Rising",            "pubYear" : 2017, "numCopies" : 0, "categories" : ["fantasy"],          "cost(Dollars)" : 9.99 }
+  book3 = { "author" : "Kat Green",    "title" : "Frozen Space",          "pubYear" : 2017, "numCopies" : 0, "categories" : ["fantasy", "scifi"], "cost(Dollars)" : 0 }
 
   # insert data
   b    = db.bookdb
@@ -132,7 +132,7 @@ def main() :
 
   # agg ops
   if OUTPUTS :
-    print "********************\nRunning COUNT: count.count( NOSQL_TYPE, b, [ bid1, bid2 ], 'pubYear,>,2000' )\n" + str(count.count( NOSQL_TYPE, b, [ bid1, bid2 ], "pubYear,>,2000" )     )
+    print "********************\nRunning COUNT: count.count(     NOSQL_TYPE, b, [ bid1, bid2 ], 'pubYear,>,2000' )\n" + str(count.count(     NOSQL_TYPE, b, [ bid1, bid2 ], "pubYear,>,2000" )     )
     print "********************\nRunning SUM  : sum_agg.sum_agg( NOSQL_TYPE, b, [ bid1, bid2 ], 'pubYear,>,2000' )\n" + str(sum_agg.sum_agg( NOSQL_TYPE, b, [ bid1, bid2 ], "pubYear,>,2000" ) )
     print "********************\nRunning AVG  : average.average( NOSQL_TYPE, b, [ bid1, bid2 ], 'pubYear,>,2000' )\n" + str(average.average( NOSQL_TYPE, b, [ bid1, bid2 ], "pubYear,>,2000" ) )
     print "********************\nRunning MIN  : min_agg.min_agg( NOSQL_TYPE, b, [ bid1, bid2 ], 'pubYear,>,2000' )\n" + str(min_agg.min_agg( NOSQL_TYPE, b, [ bid1, bid2 ], "pubYear,>,2000" ) )
