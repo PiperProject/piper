@@ -64,8 +64,19 @@ def printClosing() :
 #  CREATE INSTANCE  #
 #####################
 def createInstance() :
+
   print "Creating mongo db instance at " + DBPATH + "\n\n"
+
+  # establsih clean target dir for db
+  if not os.path.exists( DBPATH ) :
+    os.system( "mkdir " + DBPATH + " ; " )
+  else :
+    os.system( "rm -rf " + DBPATH + " ; " )
+    os.system( "mkdir " + DBPATH + " ; " )
+
+  # build mongodb instance
   os.system( "mongod --dbpath " + DBPATH + " &" )
+
 
 ##########
 #  MAIN  #
@@ -169,3 +180,8 @@ def main() :
 #  MAIN THREAD OF EXECUTION  #
 ##############################
 main()
+
+
+#########
+#  EOF  #
+#########

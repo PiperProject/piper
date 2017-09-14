@@ -3,6 +3,8 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+dbid.txt
+
 examples/mongodb-ex/dbtmp/*
 src/packages/*
 examples/mongodb-ex/src/dbid.txt
