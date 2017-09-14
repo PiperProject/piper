@@ -3,7 +3,7 @@
 import os, sys
 
 PACKAGE_PATH   = os.path.abspath( __file__ + "/../../packages" )
-CURR_PATH      = os.path.abspath( __file__ + "/.." )
+SETUP_PATH     = os.path.abspath( __file__ + "/../../.." )
 
 # ------------------------------------------------------------------- #
 #                      SUPPORTED PACKAGES                             #
@@ -32,13 +32,13 @@ def main() :
         if p == "aggsPack" :
           URL = URL_AGGSPACK
           os.system( "cd " + PACKAGE_PATH + "; git submodule add -f " + URL + ";" )
-          os.system( "python " + CURR_PATH + "/setup.py" )
+          os.system( "python " + SETUP_PATH + "/setup.py" )
 
         # SIMPLEJOIN
         elif p == "simpleJoin" :
           URL = URL_SIMPLEJOIN
           os.system( "cd " + PACKAGE_PATH + "; git submodule add -f " + URL + ";" )
-          os.system( "python " + CURR_PATH + "/setup.py" )
+          os.system( "python " + SETUP_PATH + "/setup.py" )
 
         # ERROR : UNKNOWN PACKAGE
         else :
@@ -66,7 +66,7 @@ def main() :
     #   UPDATE ALL INSTALED PACKAGES    #
     # --------------------------------- #
     elif sys.argv[1] == "update" :
-      os.system( "python " + CURR_PATH + "/setup.py" )
+      os.system( "python " + SETUP_PATH + "/setup.py" )
 
     # --------------------------------- #
     #   ERROR : PACKAGE NOT RECOGNIZED  #

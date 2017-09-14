@@ -4,7 +4,7 @@ A package index and management system for database management tools organized on
 ## Installing piper
 Installing the base piper index and management software is as easy as cloning the repository:
 ```
-git clone https://github.com/PiperProject/piper.git
+python setup.py
 ```
 
 ## Installing piper packages
