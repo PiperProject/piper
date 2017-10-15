@@ -4,8 +4,9 @@ __pycache__/
 *$py.class
 
 examples/mongodb-ex/dbtmp/*
-src/packages/*
+src/packages/**/*
 examples/mongodb-ex/src/dbid.txt
+dbid.txt
 
 # C extensions
 *.so
