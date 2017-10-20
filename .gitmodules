@@ -7,3 +7,6 @@
 [submodule "src/packages/simpleJoin"]
 	path = src/packages/simpleJoin
 	url = https://github.com/PiperProject/simpleJoin.git
+[submodule "src/packages/yprov"]
+	path = src/packages/yprov
+	url = https://github.com/PiperProject/yprov.git

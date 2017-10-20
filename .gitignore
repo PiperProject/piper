@@ -1,3 +1,11 @@
+# piper specific ignores
+lib/c4/*
+.DS_Store
+*.swp
+
+examples_hpts17/mongodb-ex/dbtmp/*
+examples_hpts17/pickledb-ex/src/*.db
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -6,7 +14,7 @@ __pycache__/
 dbid.txt
 
 examples/mongodb-ex/dbtmp/*
-src/packages/**/*
+src/packages/**/**
 examples/mongodb-ex/src/dbid.txt
 dbid.txt
 
