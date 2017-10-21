@@ -58,10 +58,11 @@ def main() :
         # QUEST
         elif p == "quest" :
           URL         = URL_QUEST
-          QUEST_SETUP = PACKAGE_PATH + "/quest/setup.py"
+          QUEST_PATH  = PACKAGE_PATH + "/quest"
+          QUEST_SETUP = QUEST_PATH + "/setup.py"
           os.system( "cd " + PACKAGE_PATH + "; git submodule add -f " + URL + ";" )
-          os.system( "python " + QUEST_SETUP )
           os.system( "python " + SETUP_PATH + "/setup.py" )
+          os.system( "cd " + QUEST_PATH + "; python " + QUEST_SETUP )
 
         # ERROR : UNKNOWN PACKAGE
         else :

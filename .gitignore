@@ -3,6 +3,8 @@ lib/c4/*
 .DS_Store
 *.swp
 
+src/drivers/temp
+
 examples_hpts17/mongodb-ex/dbtmp/*
 examples_hpts17/pickledb-ex/src/*.db
 

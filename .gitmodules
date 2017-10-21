@@ -10,3 +10,6 @@
 [submodule "src/packages/yprov"]
 	path = src/packages/yprov
 	url = https://github.com/PiperProject/yprov.git
+[submodule "src/packages/quest"]
+	path = src/packages/quest
+	url = https://github.com/PiperProject/quest.git
