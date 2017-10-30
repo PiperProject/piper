@@ -11,7 +11,7 @@ SETUP_PATH     = os.path.abspath( __file__ + "/../../.." )
 URL_AGGSPACK   = "https://github.com/PiperProject/aggsPack.git"
 URL_SIMPLEJOIN = "https://github.com/PiperProject/simpleJoin.git"
 URL_YPROV      = "https://github.com/PiperProject/yprov.git"
-URL_DUB        = "https://github.com/PiperProject/dub.git"
+URL_DUB        = "https://github.com/PiperProject/bdsm.git"
 URL_QUEST      = "https://github.com/PiperProject/quest.git"
 
 # ------------------------------------------------------------------- #
@@ -50,7 +50,7 @@ def main() :
           os.system( "python " + SETUP_PATH + "/setup.py" )
 
         # DUB
-        elif p == "dub" :
+        elif p == "bdsm" :
           URL = URL_DUB
           os.system( "cd " + PACKAGE_PATH + "; git submodule add -f " + URL + ";" )
           os.system( "python " + SETUP_PATH + "/setup.py" )
@@ -87,7 +87,7 @@ def main() :
           os.system( "cd " + PACKAGE_PATH + "; git rm --cached -f ./" + p + " ; rm -rf " + p + ";" )
 
         # DUB
-        elif p == "dub" :
+        elif p == "bdsm" :
           os.system( "cd " + PACKAGE_PATH + "; git rm --cached -f ./" + p + " ; rm -rf " + p + ";" )
 
         # QUEST
