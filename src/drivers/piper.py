@@ -34,7 +34,8 @@ def main() :
         # AGGSPACK
         if p == "aggspack" :
           URL = URL_AGGSPACK
-          os.system( "cd " + PACKAGE_PATH + "; git submodule add -f " + URL + ";" )
+          #os.system( "cd " + PACKAGE_PATH + "; git submodule add -f " + URL + ";" )
+          os.system( "cd " + PACKAGE_PATH + "; git submodule add --name aggspack " + URL + ";" )
           os.system( "python " + SETUP_PATH + "/setup.py" )
 
         # SIMPLEJOIN

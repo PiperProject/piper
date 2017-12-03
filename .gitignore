@@ -16,7 +16,7 @@ __pycache__/
 dbid.txt
 
 examples/mongodb-ex/dbtmp/*
-src/packages/**/**
+#src/packages/**/**
 examples/mongodb-ex/src/dbid.txt
 dbid.txt
 
