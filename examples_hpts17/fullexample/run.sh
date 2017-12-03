@@ -2,13 +2,13 @@
 
 echo "##################################"
 echo "      INSTALLING aggsPack..."
-python ./../../src/drivers/piper.py install aggsPack
+python ./../../src/drivers/piper.py install aggspack
 echo "...done."
 echo "##################################"
 
 echo "##################################"
 echo "      INSTALLING simpleJoin..."
-python ./../../src/drivers/piper.py install simpleJoin
+python ./../../src/drivers/piper.py install simplejoin
 echo "##################################"
 
 echo "##################################"

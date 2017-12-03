@@ -17,7 +17,7 @@ import AggsPack
 
 SIMPLEJOIN_PATH = os.path.abspath( __file__ + "/../../../../src/packages/simplejoin/src" )
 sys.path.append( SIMPLEJOIN_PATH )
-import simpleJoin
+import SimpleJoin
 
 # -------------------------------------- #
 
@@ -141,7 +141,8 @@ def main() :
     print "********************\nRunning MAX   : aggspack_op.max_agg( [ bid1, bid2 ], 'pubYear,>,2000' )\n" + str( aggspack_op.max_agg( [ bid1, bid2 ], "pubYear,>,2000" ) )
 
   # join
-  res = simpleJoin.simpleJoin( NOSQL_TYPE, b, [[bid1, bid2, bid3]], "pubYear", None )
+  simplejoin_op = SimpleJoin.SimpleJoin( NOSQL_TYPE, b )
+  res = simplejoin_op.simplejoin( [[bid1, bid2, bid3]], "pubYear", None )
   if OUTPUTS :
     print "********************\nRunning SIMPLE JOIN : simpleJoin.simpleJoin( NOSQL_TYPE, b, [[bid1, bid2, bid3]], 'pubYear', None )"
     for i in res :
