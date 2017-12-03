@@ -11,11 +11,11 @@ SETTINGS_PATH = os.path.abspath( __file__ + "/../../../../src/core")
 sys.path.append( SETTINGS_PATH )
 import settings
 
-AGGSPACK_PATH = os.path.abspath( __file__ + "/../../../../src/packages/aggsPack/packages" )
+AGGSPACK_PATH = os.path.abspath( __file__ + "/../../../../src/packages/aggspack/src" )
 sys.path.append( AGGSPACK_PATH )
-import count, sum_agg, average, min_agg, max_agg
+import AggsPack
 
-SIMPLEJOIN_PATH = os.path.abspath( __file__ + "/../../../../src/packages/simpleJoin/src" )
+SIMPLEJOIN_PATH = os.path.abspath( __file__ + "/../../../../src/packages/simplejoin/src" )
 sys.path.append( SIMPLEJOIN_PATH )
 import simpleJoin
 
@@ -131,12 +131,14 @@ def main() :
     print
 
   # agg ops
+  aggspack_op = AggsPack.AggsPack( NOSQL_TYPE, b )
+
   if OUTPUTS :
-    print "********************\nRunning COUNT: count.count(     NOSQL_TYPE, b, [ bid1, bid2 ], 'pubYear,>,2000' )\n" + str(count.count(     NOSQL_TYPE, b, [ bid1, bid2 ], "pubYear,>,2000" )     )
-    print "********************\nRunning SUM  : sum_agg.sum_agg( NOSQL_TYPE, b, [ bid1, bid2 ], 'pubYear,>,2000' )\n" + str(sum_agg.sum_agg( NOSQL_TYPE, b, [ bid1, bid2 ], "pubYear,>,2000" ) )
-    print "********************\nRunning AVG  : average.average( NOSQL_TYPE, b, [ bid1, bid2 ], 'pubYear,>,2000' )\n" + str(average.average( NOSQL_TYPE, b, [ bid1, bid2 ], "pubYear,>,2000" ) )
-    print "********************\nRunning MIN  : min_agg.min_agg( NOSQL_TYPE, b, [ bid1, bid2 ], 'pubYear,>,2000' )\n" + str(min_agg.min_agg( NOSQL_TYPE, b, [ bid1, bid2 ], "pubYear,>,2000" ) )
-    print "********************\nRunning MAX  : max_agg.max_agg( NOSQL_TYPE, b, [ bid1, bid2 ], 'pubYear,>,2000' )\n" + str(max_agg.max_agg( NOSQL_TYPE, b, [ bid1, bid2 ], "pubYear,>,2000" ) )
+    print "********************\nRunning COUNT : aggspack_op.count(     [ bid1, bid2 ], 'pubYear,>,2000' )\n" + str( aggspack_op.count(   [ bid1, bid2 ], "pubYear,>,2000" ) )
+    print "********************\nRunning SUM   : aggspack_op.sum_agg( [ bid1, bid2 ], 'pubYear,>,2000' )\n" + str( aggspack_op.sum_agg( [ bid1, bid2 ], "pubYear,>,2000" ) )
+    print "********************\nRunning AVG   : aggspack_op.average( [ bid1, bid2 ], 'pubYear,>,2000' )\n" + str( aggspack_op.average( [ bid1, bid2 ], "pubYear,>,2000" ) )
+    print "********************\nRunning MIN   : aggspack_op.min_agg( [ bid1, bid2 ], 'pubYear,>,2000' )\n" + str( aggspack_op.min_agg( [ bid1, bid2 ], "pubYear,>,2000" ) )
+    print "********************\nRunning MAX   : aggspack_op.max_agg( [ bid1, bid2 ], 'pubYear,>,2000' )\n" + str( aggspack_op.max_agg( [ bid1, bid2 ], "pubYear,>,2000" ) )
 
   # join
   res = simpleJoin.simpleJoin( NOSQL_TYPE, b, [[bid1, bid2, bid3]], "pubYear", None )

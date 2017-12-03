@@ -8,8 +8,8 @@ SETUP_PATH     = os.path.abspath( __file__ + "/../../.." )
 # ------------------------------------------------------------------- #
 #                      SUPPORTED PACKAGES                             #
 
-URL_AGGSPACK   = "https://github.com/PiperProject/aggsPack.git"
-URL_SIMPLEJOIN = "https://github.com/PiperProject/simpleJoin.git"
+URL_AGGSPACK   = "https://github.com/PiperProject/aggspack.git"
+URL_SIMPLEJOIN = "https://github.com/PiperProject/simplejoin.git"
 URL_YPROV      = "https://github.com/PiperProject/yprov.git"
 URL_DUB        = "https://github.com/PiperProject/bdsm.git"
 URL_QUEST      = "https://github.com/PiperProject/quest.git"
@@ -32,13 +32,13 @@ def main() :
       for p in packageList :
 
         # AGGSPACK
-        if p == "aggsPack" :
+        if p == "aggspack" :
           URL = URL_AGGSPACK
           os.system( "cd " + PACKAGE_PATH + "; git submodule add -f " + URL + ";" )
           os.system( "python " + SETUP_PATH + "/setup.py" )
 
         # SIMPLEJOIN
-        elif p == "simpleJoin" :
+        elif p == "simplejoin" :
           URL = URL_SIMPLEJOIN
           os.system( "cd " + PACKAGE_PATH + "; git submodule add -f " + URL + ";" )
           os.system( "python " + SETUP_PATH + "/setup.py" )
@@ -75,11 +75,11 @@ def main() :
       for p in packageList :
 
         # AGGSPACK
-        if p == "aggsPack" :
+        if p == "aggspack" :
           os.system( "cd " + PACKAGE_PATH + "; git rm --cached -f ./" + p + " ; rm -rf " + p + ";" )
 
         # SIMPLEJOIN
-        elif p == "simpleJoin" :
+        elif p == "simplejoin" :
           os.system( "cd " + PACKAGE_PATH + "; git rm --cached -f ./" + p + " ; rm -rf " + p + ";" )
 
         # YPROV

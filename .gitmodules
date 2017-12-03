@@ -1,15 +1,20 @@
-[submodule "aggsPack"]
-	path = aggsPack
-	url = https://github.com/PiperProject/aggsPack.git
 [submodule "src/packages/aggsPack"]
 	path = src/packages/aggsPack
 	url = https://github.com/PiperProject/aggsPack.git
+	ignore = dirty
 [submodule "src/packages/simpleJoin"]
 	path = src/packages/simpleJoin
 	url = https://github.com/PiperProject/simpleJoin.git
+	ignore = dirty
 [submodule "src/packages/yprov"]
 	path = src/packages/yprov
 	url = https://github.com/PiperProject/yprov.git
+	ignore = dirty
 [submodule "src/packages/quest"]
 	path = src/packages/quest
 	url = https://github.com/PiperProject/quest.git
+	ignore = dirty
+[submodule "src/packages/bdsm"]
+	path = src/packages/bdsm
+	url = https://github.com/PiperProject/bdsm.git
+	ignore = dirty
