@@ -1,6 +1,6 @@
-[submodule "src/packages/aggsPack"]
-	path = src/packages/aggsPack
-	url = https://github.com/PiperProject/aggsPack.git
+[submodule "src/packages/aggspack"]
+	path = src/packages/aggspack
+	url = https://github.com/PiperProject/aggspack.git
 	ignore = dirty
 [submodule "src/packages/simpleJoin"]
 	path = src/packages/simpleJoin
