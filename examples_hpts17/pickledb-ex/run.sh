@@ -2,5 +2,5 @@
 
 echo "##################################"
 echo "      RUNNING PICKLEDB EXAMPLE"
-python ./../../examples/pickledb-ex/src/pickle_piper.py
+python ./src/pickle_piper.py
 echo "##################################"

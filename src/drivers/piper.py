@@ -13,6 +13,7 @@ URL_SIMPLEJOIN = "https://github.com/PiperProject/simplejoin.git"
 URL_YPROV      = "https://github.com/PiperProject/yprov.git"
 URL_ONTODS     = "https://github.com/PiperProject/ontods.git"
 URL_QUEST      = "https://github.com/PiperProject/quest.git"
+URL_CONMAN     = "https://github.com/PiperProject/conman.git"
 
 # ------------------------------------------------------------------- #
 
@@ -49,7 +50,7 @@ def main() :
           os.system( "cd " + PACKAGE_PATH + "; git submodule add -f " + URL + ";" )
           os.system( "python " + SETUP_PATH + "/setup.py" )
 
-        # DUB
+        # ONTODS
         elif p == "ontods" :
           URL = URL_ontods
           os.system( "cd " + PACKAGE_PATH + "; git submodule add -f " + URL + ";" )
@@ -63,6 +64,14 @@ def main() :
           os.system( "cd " + PACKAGE_PATH + "; git submodule add -f " + URL + ";" )
           os.system( "python " + SETUP_PATH + "/setup.py" )
           os.system( "cd " + QUEST_PATH + "; python " + QUEST_SETUP )
+
+        # CONMAN
+        elif p == "conman" :
+          URL          = URL_CONMAN
+          CONMAN_PATH  = PACKAGE_PATH + "/conman"
+          CONMAN_SETUP = CONMAN_PATH + "/setup.py"
+          os.system( "cd " + PACKAGE_PATH + "; git submodule add -f " + URL + ";" )
+          os.system( "python " + SETUP_PATH + "/setup.py" )
 
         # ERROR : UNKNOWN PACKAGE
         else :
@@ -94,6 +103,10 @@ def main() :
         elif p == "quest" :
           os.system( "cd " + PACKAGE_PATH + "; git rm --cached -f ./" + p + " ; rm -rf " + p + ";" )
 
+        # CONMAN
+        elif p == "conman" :
+          os.system( "cd " + PACKAGE_PATH + "; git rm --cached -f ./" + p + " ; rm -rf " + p + ";" )
+
         # ERROR : UNKNOWN PACKAGE
         else :
           print "Package not recognized : " + p
@@ -116,7 +129,10 @@ def main() :
   #   ERROR : NO ARGUMENTS PROVIDED   #
   # --------------------------------- #
   else :
-    sys.exit( "ERROR : must provide at least one of :\n{ 'install', 'uninstall', 'update' },\nwith appropriate corresponding additional arguments when calling the piper package index." )
+    sys.exit( "ERROR : must provide at least one of :\n" + \
+              "{ 'install', 'uninstall', 'update' },\nwith " + \
+              "appropriate corresponding additional arguments when " + \
+              "calling the piper package index." )
 
 
 ##############################

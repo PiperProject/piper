@@ -17,3 +17,6 @@
 [submodule "src/packages/simplejoin"]
 	path = src/packages/simplejoin
 	url = https://github.com/PiperProject/simplejoin.git
+[submodule "src/packages/conman"]
+	path = src/packages/conman
+	url = https://github.com/PiperProject/conman.git
